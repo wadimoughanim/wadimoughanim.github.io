@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wadi Moughanim</title>
+  <style>
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      background-color: #0f1115;
+      color: #f3f3f3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    h2 {
+      font-weight: 400;
+      color: #aaa;
+      font-size: 1.2rem;
+      margin-top: 0;
+    }
+
+    .quote {
+      margin: 2rem 0;
+      font-style: italic;
+      color: #ccc;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+
+    .chart {
+      width: 90%;
+      max-width: 700px;
+      height: 350px;
+      margin: 2rem 0;
+      border: 1px solid #333;
+      border-radius: 12px;
+      background: #1a1d24;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    a {
+      color: #5cb3ff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Wadi Moughanim</h1>
+  <h2>Quantitative Analyst · Energy Markets</h2>
+
+  <div id="chart1" class="chart"></div>
+  <div id="chart2" class="chart"></div>
+
+  <footer>
+    © 2025 Wadi Moughanim · <a href="https://github.com/wadimoughanim" target="_blank">GitHub</a>
+  </footer>
+
+  <!-- Plotly JS (for charts) -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script>
+    // Example placeholder charts
+    const trace1 = { x: [1, 2, 3, 4, 5], y: [1, 4, 2, 6, 3], mode: 'lines', name: 'Example A' };
+    const trace2 = { x: [1, 2, 3, 4, 5], y: [3, 1, 5, 2, 7], mode: 'lines', name: 'Example B' };
+
+    Plotly.newPlot('chart1', [trace1], { margin: { t: 30 }, paper_bgcolor: '#1a1d24', plot_bgcolor: '#1a1d24', font: { color: '#f3f3f3' } });
+    Plotly.newPlot('chart2', [trace2], { margin: { t: 30 }, paper_bgcolor: '#1a1d24', plot_bgcolor: '#1a1d24', font: { color: '#f3f3f3' } });
+  </script>
+</body>
+</html>
