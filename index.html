@@ -48,13 +48,13 @@
 <script>
 (function(){
   // ===== Parameters =====
-  const dtMs = 50;
+  const dtMs = 150;
   const halfSec = (500/dtMs)|0;
   const candleTicks = halfSec;
 
   // organic log-price dynamics
-  const baseSigma = 0.006;   // base vol per tick (log space)
-  const volK = 0.30;         // +vol per |pos|
+  const baseSigma = 0.003;   // base vol per tick (log space)
+  const volK = 0.20;         // +vol per |pos|
   const impactK = 0.0016;    // adverse drift per unit
   const kappa = 0.00025;     // gentle pull to anchor
   const clampMin = 1;
