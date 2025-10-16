@@ -1,261 +1,223 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="auto">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Wadi Moughanim</title>
-  <meta name="description" content="Wadi Moughanim — Quantitative Analyst in energy markets.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0e1116;--bg-2:#131823;--text:#f2f5f7;--muted:#a8b0bd;
-      --card:rgba(255,255,255,0.06);--border:rgba(255,255,255,0.12);
-      --accent:#6fb0ff;--shadow:0 10px 30px rgba(0,0,0,.35)
-    }
-    @media (prefers-color-scheme: light){
-      html[data-theme="auto"]{--bg:#f7f9fc;--bg-2:#fff;--text:#0c1118;--muted:#5b6574;
-      --card:rgba(0,0,0,.04);--border:rgba(0,0,0,.08);--accent:#0b6bff;--shadow:0 10px 30px rgba(0,0,0,.08)}
-    }
-    *{box-sizing:border-box}html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Helvetica Neue",sans-serif;color:var(--text);
-      background:radial-gradient(1200px 600px at 10% -10%, rgba(111,176,255,.12), transparent 60%),
-                 radial-gradient(900px 500px at 90% 0%, rgba(146,255,192,.10), transparent 60%),
-                 linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%)}
-    .container{max-width:980px;margin:0 auto;padding:32px 16px 80px}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0 20px}
-    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
-    .logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg, rgba(111,176,255,.25), rgba(146,255,192,.15));
-      border:1px solid var(--border);box-shadow:var(--shadow);display:grid;place-items:center;font-weight:700}
-    .toggle{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:12px;padding:8px 12px;cursor:pointer}
-    .hero{text-align:center;padding:28px 0 20px}
-    .title{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:8px 0 6px;background:linear-gradient(90deg,var(--text),var(--accent));
-      -webkit-background-clip:text;background-clip:text;color:transparent}
-    .subtitle{color:var(--muted);font-size:16px}
-    .quote{margin:26px auto 10px;max-width:720px;color:var(--muted);font-style:italic;border-left:3px solid var(--border);
-      padding:10px 16px;text-align:left;background:var(--card);border-radius:8px}
-    .grid{display:grid;gap:18px;grid-template-columns:1fr;margin-top:26px}
-    @media(min-width:860px){.grid{grid-template-columns:1fr 1fr}}
-    .card{border:1px solid var(--border);background:backdrop-filter(saturate(140%) blur(6px)) var(--card);
-      border-radius:16px;padding:14px;box-shadow:var(--shadow);transition:transform .18s ease,border-color .18s ease}
-    .card:hover{transform:translateY(-2px);border-color:rgba(111,176,255,.35)}
-    .card h3{margin:6px 6px 10px;font-size:15px;color:var(--muted);font-weight:500;display:flex;align-items:center;gap:8px}
-    .chip{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--muted)}
-    .chart{width:100%;height:340px;border-radius:12px;overflow:hidden;background:rgba(0,0,0,.08)}
-    .controls{display:flex;gap:8px;flex-wrap:wrap;margin:10px 6px 0}
-    .btn{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:10px;padding:8px 12px;cursor:pointer}
-    .stats{display:flex;gap:12px;flex-wrap:wrap;margin:8px 6px;color:var(--muted);font-size:14px}
-    .about{margin:34px auto 0;max-width:820px;border:1px solid var(--border);background:var(--card);border-radius:16px;padding:18px 20px;color:var(--muted)}
-    .about p{margin:.3rem 0} footer{text-align:center;color:var(--muted);margin-top:22px;font-size:14px}
-    footer a{color:var(--accent);text-decoration:none} footer a:hover{text-decoration:underline}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Wadi Moughanim</title>
+<style>
+  :root{--bg:#0e1116;--ink:#f2f5f7;--card:#12161b;--edge:#222a35;--up:#56d17a;--dn:#ff6b6b}
+  *{box-sizing:border-box} html,body{height:100%}
+  body{
+    margin:0;background:linear-gradient(180deg,#0b0e13 0%, var(--bg) 100%);
+    color:var(--ink);font:400 16px/1.5 Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+    display:flex;align-items:center;justify-content:center;padding:24px
+  }
+  .wrap{width:min(860px,94vw)}
+  h1{margin:0 0 4px;font-size:clamp(26px,4vw,40px);text-align:center;letter-spacing:.2px}
+  .pnl{margin:2px 0 10px;text-align:center;font-weight:700;color:#cfe6ff}
+  .card{background:var(--card);border:1px solid var(--edge);border-radius:14px;padding:12px;
+        box-shadow:0 18px 40px rgba(0,0,0,.35); margin-bottom:16px}
+  #chart{display:block;width:100%;height:420px;border-radius:10px;background:#0c1118}
+  .row{display:flex;gap:10px;justify-content:center;margin:12px 0 2px}
+  button{cursor:pointer;border:1px solid var(--edge);background:#0f1520;color:var(--ink);
+         padding:10px 18px;border-radius:12px;font-weight:700;letter-spacing:.2px}
+  button:active{transform:translateY(1px)}
+  .pos{margin:6px 0 2px;text-align:center;font-weight:700;color:#9fb7ff}
+  .about{background:var(--card);border:1px solid var(--edge);border-radius:14px;padding:16px;
+         box-shadow:0 18px 40px rgba(0,0,0,.35)}
+  .about h2{margin:0 0 10px;text-align:center;font-size:18px;opacity:.9}
+  .about p{margin:.25rem 0 1rem;opacity:.85}
+</style>
 </head>
 <body>
-  <div class="container">
-    <div class="nav">
-      <a class="brand" href="/"><div class="logo">W</div><span><strong>Wadi&nbsp;Moughanim</strong></span></a>
-      <button id="themeToggle" class="toggle" aria-label="Toggle theme">🌗 Theme</button>
+  <div class="wrap">
+    <h1>Wadi Moughanim</h1>
+    <div class="pnl">PnL: <span id="pnl">0.00</span></div>
+
+    <div class="card">
+      <canvas id="chart"></canvas>
+      <div class="row">
+        <button id="decBtn">−</button>
+        <button id="incBtn">+</button>
+      </div>
+      <div class="pos">Position: <span id="pos">0</span></div>
     </div>
 
-    <header class="hero">
-      <h1 class="title">Quant · Energy · Geopolitics</h1>
-      <div class="subtitle">Geneva, Switzerland</div>
-      <div class="quote">“If volatility were a person, it would probably have Wadi’s laugh.”</div>
-    </header>
-
-    <section class="grid">
-      <!-- GAME -->
-      <div class="card">
-        <h3><span class="chip">Game</span> Tape Trader — 60s PnL Challenge</h3>
-        <div id="gameChart" class="chart"></div>
-        <div class="stats">
-          <div>⏱️ <span id="tLeft">60</span>s</div>
-          <div>💰 PnL: <span id="pnl">0.00</span></div>
-          <div>📦 Position: <span id="pos">Flat</span></div>
-          <div>🏆 Best: <span id="best">0.00</span></div>
-          <div>🪙 Price: <span id="px">100.00</span></div>
-          <div>🧾 Spread/Trade: <span id="spreadLbl">0.20</span></div>
-        </div>
-        <div class="controls">
-          <button class="btn" id="startBtn">▶ Start</button>
-          <button class="btn" id="flatBtn" disabled>⏹ Flat</button>
-          <button class="btn" id="buyBtn" disabled>🟢 Long</button>
-          <button class="btn" id="sellBtn" disabled>🔴 Short</button>
-          <button class="btn" id="resetBtn" disabled>↻ Reset</button>
-        </div>
-        <div class="stats" style="margin-top:6px">
-          <span>Goal: finish positive after costs. Every change of position pays the spread. Inventory PnL = position × (price change).</span>
-        </div>
-      </div>
-
-      <!-- A chart slot you can keep or remove -->
-      <div class="card">
-        <h3><span class="chip">Chart</span> Rolling correlation — demo</h3>
-        <div id="chart1" class="chart"></div>
-      </div>
-    </section>
-
-    <section class="about">
-      <p><strong>About.</strong> I build models at the intersection of data, energy markets, and geopolitics. This page is a tiny lab — part portfolio, part playground.</p>
-    </section>
-
-    <footer>© <span id="y"></span> Wadi Moughanim · <a href="https://github.com/wadimoughanim" target="_blank" rel="noreferrer">GitHub</a></footer>
   </div>
 
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script>
-    // year + theme
-    document.getElementById('y').textContent = new Date().getFullYear();
-    const html = document.documentElement, THEME_KEY='waditheme';
-    const saved = localStorage.getItem(THEME_KEY); if(saved) html.setAttribute('data-theme', saved);
-    document.getElementById('themeToggle').onclick = () => {
-      const c = html.getAttribute('data-theme') || 'auto';
-      const n = c==='auto' ? 'dark' : c==='dark' ? 'light' : 'auto';
-      html.setAttribute('data-theme', n); localStorage.setItem(THEME_KEY, n);
-      const p = {font:{color:getComputedStyle(document.body).color}, paper_bgcolor:'transparent', plot_bgcolor:'transparent'};
-      Plotly.relayout('gameChart', p); Plotly.relayout('chart1', p);
-    };
+<script>
+(function(){
+  // ===== Parameters =====
+  const dtMs = 50;
+  const halfSec = (500/dtMs)|0;
+  const candleTicks = halfSec;
 
-    // ---- Tape Trader Game ----
-    const el = (id)=>document.getElementById(id);
-    const pxEl=el('px'), pnlEl=el('pnl'), posEl=el('pos'), tEl=el('tLeft'), bestEl=el('best'), spreadLbl=el('spreadLbl');
-    const startBtn=el('startBtn'), flatBtn=el('flatBtn'), buyBtn=el('buyBtn'), sellBtn=el('sellBtn'), resetBtn=el('resetBtn');
+  // organic log-price dynamics
+  const baseSigma = 0.006;   // base vol per tick (log space)
+  const volK = 0.30;         // +vol per |pos|
+  const impactK = 0.0016;    // adverse drift per unit
+  const kappa = 0.00025;     // gentle pull to anchor
+  const clampMin = 1;
+  const maxCandles = 240;
 
-    // params
-    const TICKS = 600;          // 600 ticks ~ 60s at 10Hz
-    const FREQ  = 100;          // ms per tick
-    const SPREAD = 0.20;        // cost per position change
-    spreadLbl.textContent = SPREAD.toFixed(2);
+  // ===== State =====
+  let S = 100, logS = Math.log(S);
+  let pos = 0, avg = 0, realized = 0;
+  let tick = 0, sub = 0;
+  let rPrev = 0, vState = 0; // AR + vol clustering
 
-    // state
-    let price=100, t=0, pos=0, pnl=0, timer=null, prices=[price], times=[0], running=false;
-    let entryPx = 0; // average entry for current position
+  // candles
+  let O=[],H=[],L=[],C=[],X=[];
+  let curO=S,curH=S,curL=S,curC=S;
 
-    const layout = {
-      margin:{t:24,r:16,b:28,l:40},
-      paper_bgcolor:'transparent', plot_bgcolor:'transparent',
-      font:{color:getComputedStyle(document.body).color},
-      xaxis:{showgrid:false, title:'ticks'},
-      yaxis:{title:'price', zerolinecolor:'rgba(128,128,128,.4)'}
-    };
-    Plotly.newPlot('gameChart',[{x:times,y:prices,mode:'lines',name:'Price'}],layout,{displayModeBar:false,responsive:true});
+  // UI
+  const pnlEl = document.getElementById('pnl');
+  const posEl = document.getElementById('pos');
+  const incBtn = document.getElementById('incBtn');
+  const decBtn = document.getElementById('decBtn');
 
-    function setButtons(state){
-      const on = (btn,enabled)=>{btn.disabled = !enabled};
-      if(state==='idle'){on(startBtn,true); on(flatBtn,false); on(buyBtn,false); on(sellBtn,false); on(resetBtn,false);}
-      if(state==='running'){on(startBtn,false); on(flatBtn,true); on(buyBtn,true); on(sellBtn,true); on(resetBtn,true);}
-      if(state==='ended'){on(startBtn,false); on(flatBtn,false); on(buyBtn:false); on(sellBtn,false); on(resetBtn,true);}
+  // canvas
+  const canvas = document.getElementById('chart'), ctx = canvas.getContext('2d');
+  function resize(){
+    const dpr = Math.max(1, window.devicePixelRatio||1);
+    canvas.width  = Math.floor(canvas.clientWidth * dpr);
+    canvas.height = Math.floor(canvas.clientHeight* dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function pushCandle(o,h,l,c,i){
+    O.push(o);H.push(h);L.push(l);C.push(c);X.push(i);
+    if(O.length>maxCandles){O.shift();H.shift();L.shift();C.shift();X.shift();}
+  }
+  function updateLast(h,l,c){
+    H[H.length-1] = Math.max(H[H.length-1], h);
+    L[L.length-1] = Math.min(L[L.length-1], l);
+    C[C.length-1] = c;
+  }
+  function initCandles(n=30){ for(let i=0;i<n;i++) pushCandle(S,S,S,S,i); }
+  resize(); addEventListener('resize', ()=>{ resize(); draw(); }); initCandles();
+
+  // rng
+  function randn(){ const u=Math.random(),v=Math.random(); return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v); }
+
+  function stepPrice(){
+    const anchor = Math.log(100);
+    // adverse drift against position + gentle mean reversion
+    const drift = -impactK*pos + kappa*(anchor - logS);
+    const z = randn();
+    // volatility clustering: vState carries shock magnitude
+    vState = 0.92*vState + 0.08*Math.abs(z);
+    const sigma = baseSigma*(1 + volK*Math.abs(pos))*(1 + 0.8*vState);
+    // AR(1) return for smoother “organic” swings
+    const r = 0.80*rPrev + sigma*z;
+    rPrev = r;
+
+    logS += drift + r;
+    S = Math.max(clampMin, Math.exp(logS));
+  }
+
+  function mtm(){ return realized + pos*(S - avg); }
+
+  function changePos(delta){
+    const target = Math.max(-10, Math.min(10, pos + delta));
+    let rem = target - pos;
+    while(rem !== 0){
+      const step = rem > 0 ? 1 : -1;
+      if(pos === 0 || Math.sign(pos) === Math.sign(step)){
+        const oldQty = Math.abs(pos), newQty = oldQty + 1;
+        avg = (avg*oldQty + S) / newQty;
+        pos += step;
+      } else {
+        realized += (S - avg) * Math.sign(pos);
+        pos += step;
+        if(pos === 0) avg = 0;
+      }
+      rem -= step;
     }
-    setButtons('idle');
+    posEl.textContent = pos.toString();
+    // little volatility kick on interaction
+    rPrev *= 0.3; vState += 0.6;
+  }
 
-    function tick(){
-      // random walk with slight volatility clustering
-      const shock = (Math.random()-0.5)*0.6 + (Math.sin(t/35)*0.08);
-      price = Math.max(10, price + shock);
-      t += 1;
-      prices.push(price); times.push(t);
-      const invPnL = pos * (price - entryPx);
-      pnlEl.textContent = (pnl + invPnL).toFixed(2);
-      pxEl.textContent = price.toFixed(2);
-      posEl.textContent = pos===0 ? 'Flat' : (pos>0?'Long':'Short');
+  incBtn.onclick = ()=> changePos(+1);
+  decBtn.onclick = ()=> changePos(-1);
+  addEventListener('keydown', e=>{
+    if(e.key==='ArrowRight' || e.key==='+') changePos(+1);
+    if(e.key==='ArrowLeft'  || e.key==='-') changePos(-1);
+  });
 
-      // update chart every ~5 ticks for performance
-      if(t % 5 === 0) Plotly.extendTraces('gameChart',{x:[[t]],[y:[[price]]]},[0], 1000);
+  function draw(){
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    ctx.clearRect(0,0,w,h);
+    if(!O.length) return;
 
-      // timer text
-      const left = Math.max(0, Math.ceil((TICKS - t)/ (1000/FREQ)));
-      tEl.textContent = left.toString();
+    const lo = Math.min(...L), hi = Math.max(...H);
+    const pad = (hi-lo)*0.05 || 1;
+    const yMin = lo - pad, yMax = hi + pad;
+    const yScale = v => h - ((v - yMin)/(yMax - yMin))*(h-12) - 6;
 
-      if(t >= TICKS){ endGame(); }
+    const n = O.length;
+    const gap = Math.max(3, w/n);
+    const body = Math.max(2, gap*0.55);
+
+    // candles
+    for(let i=0;i<n;i++){
+      const x = i*gap + gap*0.2;
+      const yO=yScale(O[i]), yC=yScale(C[i]), yH=yScale(H[i]), yL=yScale(L[i]);
+      const up = C[i] >= O[i];
+      ctx.strokeStyle = up ? '#56d17a' : '#ff6b6b';
+      ctx.fillStyle   = ctx.strokeStyle;
+      // wick
+      ctx.beginPath(); ctx.moveTo(x+body/2, yH); ctx.lineTo(x+body/2, yL); ctx.stroke();
+      // body
+      const top = Math.min(yO,yC), ht = Math.max(1, Math.abs(yC - yO));
+      ctx.globalAlpha=.9; ctx.fillRect(x, top, body, ht); ctx.globalAlpha=1;
     }
 
-    function startGame(){
-      if(running) return;
-      // reset state
-      price=100; t=0; pos=0; pnl=0; entryPx=price; prices=[price]; times=[0];
-      Plotly.react('gameChart',[{x:times,y:prices,mode:'lines',name:'Price'}],layout,{displayModeBar:false,responsive:true});
-      pnlEl.textContent='0.00'; pxEl.textContent=price.toFixed(2); posEl.textContent='Flat'; tEl.textContent='60';
-      running = true; setButtons('running');
-      timer = setInterval(tick, FREQ);
+    // last price tag on the right
+    const yLast = yScale(C[n-1]);
+    ctx.strokeStyle = 'rgba(200,220,255,.25)';
+    ctx.setLineDash([4,6]); ctx.beginPath(); ctx.moveTo(0, yLast); ctx.lineTo(w, yLast); ctx.stroke(); ctx.setLineDash([]);
+
+    const label = C[n-1].toFixed(2);
+    ctx.font = '700 13px Inter,system-ui,sans-serif';
+    const tw = ctx.measureText(label).width;
+    const padX = 8, padY = 4, boxW = tw + padX*2, boxH = 24;
+    const xBox = w - boxW - 6, yBox = Math.max(6, Math.min(h - boxH - 6, yLast - boxH/2));
+    ctx.fillStyle = '#1a2433'; ctx.strokeStyle = '#2a3a55';
+    const r=8;
+    ctx.beginPath();
+    ctx.moveTo(xBox+r,yBox);
+    ctx.arcTo(xBox+boxW,yBox,xBox+boxW,yBox+boxH,r);
+    ctx.arcTo(xBox+boxW,yBox+boxH,xBox,yBox+boxH,r);
+    ctx.arcTo(xBox,yBox+boxH,xBox,yBox,r);
+    ctx.arcTo(xBox,yBox,xBox+boxW,yBox,r);
+    ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = '#cfe6ff';
+    ctx.fillText(label, xBox + padX, yBox + boxH - padY - 6);
+  }
+
+  // engine
+  setInterval(()=>{
+    tick++; sub++;
+    stepPrice();
+
+    if(sub % candleTicks === 1){
+      curO = curH = curL = curC = S;
+      pushCandle(curO,curH,curL,curC, tick/candleTicks);
+    } else {
+      curH = Math.max(curH, S);
+      curL = Math.min(curL, S);
+      curC = S;
+      updateLast(curH,curL,curC);
     }
 
-    function endGame(){
-      running=false; clearInterval(timer);
-      // realize inventory PnL at the end (close at last price)
-      pnl += pos * (price - entryPx);
-      pos = 0; posEl.textContent='Flat'; pnlEl.textContent=pnl.toFixed(2);
-      setButtons('ended');
-      // save best
-      const best = parseFloat(localStorage.getItem('wadibest')||'0');
-      if(pnl > best){ localStorage.setItem('wadibest', String(pnl)); }
-      bestEl.textContent = (parseFloat(localStorage.getItem('wadibest')||'0')).toFixed(2);
+    if(sub % halfSec === 0){
+      pnlEl.textContent = mtm().toFixed(2);
     }
 
-    function goFlat(){
-      if(!running) return;
-      // realize inventory, pay spread if changing from non-zero to 0
-      if(pos !== 0){ pnl += pos * (price - entryPx) - SPREAD; }
-      pos = 0; entryPx = price;
-    }
-    function goLong(){
-      if(!running) return;
-      if(pos === 1) return; // already long
-      // changing position pays spread, also realize existing inventory
-      if(pos !== 0){ pnl += pos * (price - entryPx) - SPREAD; }
-      pos = 1; entryPx = price;
-    }
-    function goShort(){
-      if(!running) return;
-      if(pos === -1) return; // already short
-      if(pos !== 0){ pnl += pos * (price - entryPx) - SPREAD; }
-      pos = -1; entryPx = price;
-    }
-    function resetGame(){
-      clearInterval(timer); running=false; setButtons('idle');
-      price=100; t=0; pos=0; pnl=0; entryPx=price; prices=[price]; times=[0];
-      Plotly.react('gameChart',[{x:times,y:prices,mode:'lines',name:'Price'}],layout,{displayModeBar:false,responsive:true});
-      pnlEl.textContent='0.00'; pxEl.textContent='100.00'; posEl.textContent='Flat'; tEl.textContent='60';
-    }
-
-    // wire controls
-    startBtn.onclick = startGame;
-    flatBtn.onclick  = goFlat;
-    buyBtn.onclick   = goLong;
-    sellBtn.onclick  = goShort;
-    resetBtn.onclick = resetGame;
-
-    // best score init
-    bestEl.textContent = (parseFloat(localStorage.getItem('wadibest')||'0')).toFixed(2);
-
-    // Bonus: keyboard shortcuts
-    // L = long, S = short, F = flat, Space = start/reset
-    window.addEventListener('keydown', (e)=>{
-      if(e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-      if(e.key==='l' || e.key==='L') goLong();
-      if(e.key==='s' || e.key==='S') goShort();
-      if(e.key==='f' || e.key==='F') goFlat();
-      if(e.code==='Space'){ if(!running) startGame(); else goFlat(); e.preventDefault(); }
-    });
-
-    // Demo extra chart (optional)
-    (function(){
-      const x = [...Array(150)].map((_,i)=> i);
-      const s1 = x.map((i)=> Math.sin(i/10) + (Math.random()-0.5)*0.3);
-      const s2 = x.map((i)=> Math.cos(i/11) + (Math.random()-0.5)*0.3);
-      const win=20, corr=x.map((i)=>{
-        if(i<win) return null;
-        const a=s1.slice(i-win,i), b=s2.slice(i-win,i);
-        const ma=a.reduce((p,c)=>p+c,0)/a.length, mb=b.reduce((p,c)=>p+c,0)/b.length;
-        const num=a.map((v,j)=>(v-ma)*(b[j]-mb)).reduce((p,c)=>p+c,0);
-        const da=Math.sqrt(a.map(v=>(v-ma)**2).reduce((p,c)=>p+c,0));
-        const db=Math.sqrt(b.map(v=>(v-mb)**2).reduce((p,c)=>p+c,0));
-        return da*db===0 ? 0 : num/(da*db);
-      });
-      Plotly.newPlot('chart1', [{x,y:corr,mode:'lines',name:'ρ'}],
-        {margin:{t:24,r:16,b:28,l:40},paper_bgcolor:'transparent',plot_bgcolor:'transparent',
-         font:{color:getComputedStyle(document.body).color},yaxis:{range:[-1,1],zerolinecolor:'rgba(128,128,128,.4)'},xaxis:{showgrid:false}},
-         {displayModeBar:false,responsive:true});
-    })();
-  </script>
+    draw();
+  }, dtMs);
+})();
+</script>
 </body>
 </html>
