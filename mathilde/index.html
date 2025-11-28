@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Mathilde Laurent – Fragrance & Marketing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Mathilde Laurent, fragrance & luxury marketing professional specialized in fine fragrances, cosmetics and olfactory trend analysis." />
 
   <!-- Typography -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
@@ -19,15 +20,15 @@
       --text-muted: #6F665E;
       --accent-gold: #C0A46A;
       --border-soft: rgba(0,0,0,0.06);
-      --shadow-soft: 0 20px 50px rgba(15,12,10,0.06);
+      --shadow-soft: 0 22px 55px rgba(15,12,10,0.07);
 
-      /* Spacing scale */
+      /* Spacing */
       --space-xs: 4px;
       --space-s: 8px;
       --space-m: 16px;
       --space-l: 24px;
       --space-xl: 40px;
-      --space-xxl: 80px;
+      --space-xxl: 88px;
 
       /* Radius */
       --radius-lg: 24px;
@@ -44,9 +45,13 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, rgba(255,255,255,0.5), transparent 60%), var(--bg-page);
+      background: radial-gradient(circle at 0% 0%, rgba(255,255,255,0.55), transparent 55%), var(--bg-page);
       color: var(--text-main);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
@@ -98,6 +103,14 @@
       margin-bottom: var(--space-s);
     }
 
+    .section-index {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: var(--space-xs);
+    }
+
     .heading-hero {
       font-family: "Playfair Display", "Cormorant Garamond", serif;
       font-size: clamp(2.4rem, 4vw, 3.1rem);
@@ -125,12 +138,16 @@
 
     .section-header {
       margin-bottom: var(--space-l);
-      max-width: 520px;
+      max-width: 560px;
     }
 
     .section-header p {
       font-size: 0.96rem;
       color: var(--text-muted);
+    }
+
+    .body-s {
+      font-size: 0.9rem;
     }
 
     /* Buttons */
@@ -162,7 +179,7 @@
     .btn-primary:hover {
       background: linear-gradient(135deg, #fdfaf6, var(--bg-surface-alt));
       transform: translateY(-1px);
-      box-shadow: 0 20px 44px rgba(0,0,0,0.1);
+      box-shadow: 0 22px 46px rgba(0,0,0,0.1);
     }
 
     .btn-ghost {
@@ -172,7 +189,7 @@
     .btn-ghost:hover {
       background: rgba(248,244,239,0.98);
       transform: translateY(-1px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
     }
 
     /* Header / Nav */
@@ -202,14 +219,14 @@
     }
 
     .nav-logo-mark {
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       border: 1px solid rgba(0,0,0,0.14);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.72rem;
+      font-size: 0.8rem;
       background: radial-gradient(circle at 20% 0, rgba(255,255,255,0.9), var(--bg-surface-alt));
     }
 
@@ -259,7 +276,7 @@
     }
 
     .nav-cta::after {
-      display: none; /* no underline */
+      display: none; /* avoid underline animation */
     }
 
     .nav-toggle {
@@ -329,7 +346,7 @@
     .hero-card {
       background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(231,222,211,0.86));
       border-radius: var(--radius-xl);
-      padding: 28px 26px 26px;
+      padding: 30px 26px 26px;
       box-shadow: var(--shadow-soft);
       border: 1px solid var(--border-soft);
       position: relative;
@@ -450,6 +467,40 @@
       .hero-photo-secondary {
         max-width: 220px;
       }
+    }
+
+    /* About traits */
+    .about-traits {
+      margin-top: var(--space-xl);
+      display: grid;
+      gap: var(--space-m);
+    }
+
+    @media (min-width: 780px) {
+      .about-traits {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .trait-card {
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 14px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.03);
+    }
+
+    .trait-title {
+      font-family: "Playfair Display", serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-xs);
+    }
+
+    .trait-body {
+      font-size: 0.9rem;
+      color: var(--text-muted);
     }
 
     /* EXPERIENCE */
@@ -609,16 +660,26 @@
     /* ACADEMIC + CANADA */
     .academic-layout {
       border-radius: var(--radius-xl);
-      padding: var(--space-l) var(--space-m);
+      padding: var(--space-xl) var(--space-m);
       background: rgba(255,255,255,0.96);
       border: 1px solid var(--border-soft);
       box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
     }
 
-    @media (min-width: 900px) {
-      .academic-layout {
-        padding: var(--space-xl);
-      }
+    .academic-layout::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 0, rgba(215,204,187,0.7), transparent 60%);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .academic-inner {
+      position: relative;
+      z-index: 1;
     }
 
     .academic-grid {
@@ -760,7 +821,7 @@
       border-radius: var(--radius-pill);
       padding: 5px 11px;
       border: 1px solid rgba(255,255,255,0.7);
-      background: rgba(0,0,0,0.28);
+      background: rgba(0,0,0,0.3);
       color: #fff;
       font-size: 0.78rem;
       letter-spacing: 0.2em;
@@ -898,13 +959,13 @@
     .portfolio-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(145deg, rgba(0,0,0,0.38), rgba(0,0,0,0.06));
-      opacity: 0.78;
+      background: linear-gradient(145deg, rgba(0,0,0,0.4), rgba(0,0,0,0.06));
+      opacity: 0.8;
       transition: opacity 0.2s ease;
     }
 
     .portfolio-card:hover .portfolio-overlay {
-      opacity: 0.56;
+      opacity: 0.6;
     }
 
     .portfolio-content {
@@ -952,7 +1013,7 @@
       backdrop-filter: blur(10px);
     }
 
-    /* Lang & Interests */
+    /* LANGUAGES & INTERESTS */
     .two-col {
       display: grid;
       gap: var(--space-l);
@@ -1000,10 +1061,48 @@
       border-bottom: none;
     }
 
-    /* Contact */
+    /* CV SECTION */
+    .cv-card {
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl) var(--space-m);
+      background: linear-gradient(135deg, rgba(248,244,239,0.98), rgba(231,222,211,0.96));
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      gap: var(--space-m);
+    }
+
+    @media (min-width: 820px) {
+      .cv-card {
+        padding-inline: var(--space-xl);
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+        align-items: center;
+      }
+    }
+
+    .cv-meta {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-top: var(--space-s);
+    }
+
+    .cv-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: var(--space-m);
+    }
+
+    .cv-note {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: var(--space-s);
+    }
+
+    /* CONTACT */
     .contact-card {
       border-radius: var(--radius-xl);
-      padding: var(--space-l) var(--space-m);
+      padding: var(--space-xl) var(--space-m);
       background: linear-gradient(135deg, rgba(248,244,239,0.97), rgba(226,214,197,0.95));
       border: 1px solid rgba(0,0,0,0.06);
       box-shadow: var(--shadow-soft);
@@ -1013,7 +1112,7 @@
 
     @media (min-width: 780px) {
       .contact-card {
-        padding: var(--space-xl);
+        padding-inline: var(--space-xl);
         grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
       }
     }
@@ -1066,6 +1165,7 @@
       padding-bottom: 2px;
     }
 
+    /* FOOTER */
     .site-footer {
       padding-block: 26px 30px;
       font-size: 0.78rem;
@@ -1095,13 +1195,11 @@
       <nav class="nav-links" id="nav-links">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="#education">Academic</a>
+        <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-        <a href="CV_Mathilde_Laurent.pdf" class="nav-cta" target="_blank" rel="noreferrer">
-          CV (PDF)
-        </a>
+        <a href="#cv">CV</a>
+        <a href="#contact" class="nav-cta">Contact</a>
       </nav>
     </div>
   </header>
@@ -1111,17 +1209,18 @@
     <!-- 1. HOME / ABOUT -->
     <section id="about" class="section section--hero">
       <div class="shell">
+        <div class="section-index">01 · About</div>
         <div class="hero-grid">
 
           <!-- Text -->
           <div class="hero-card">
             <div class="hero-card-inner">
-              <div class="eyebrow">Fragrance &amp; Luxury Marketing</div>
+              <div class="eyebrow">Fragrance &amp; Marketing</div>
               <h1 class="heading-hero">Mathilde Laurent</h1>
               <p class="hero-tagline">
-                I’m Mathilde, passionate about fragrances, luxury marketing, and sustainable beauty.
-                Curious, creative, analytical, and driven by innovation, I combine marketing experience
-                with a deep love for olfactory creation and an international perspective shaped by a year in Canada.
+                Passionate about fragrances, luxury marketing, and sustainable beauty. Curious, creative,
+                analytical, and driven by innovation, I combine hands-on experience in fine fragrance
+                development with a deep love for olfactory creation and international exposure.
               </p>
 
               <div class="hero-meta">
@@ -1131,7 +1230,7 @@
               </div>
 
               <div class="hero-actions">
-                <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                <a href="#experience" class="btn btn-primary">Discover My Journey</a>
                 <a href="CV_Mathilde_Laurent.pdf" class="btn btn-ghost" target="_blank" rel="noreferrer">
                   View CV (PDF)
                 </a>
@@ -1156,11 +1255,36 @@
                 <img src="images/mathilde-holiday.jpg" alt="Mathilde Laurent during holidays" />
               </div>
               <p class="hero-note">
-                A French vision of beauty and scents, between Paris and international experiences.
+                A French vision of beauty and scent, between Paris, niche perfumery and international experience.
               </p>
             </div>
           </div>
 
+        </div>
+
+        <!-- About traits -->
+        <div class="about-traits">
+          <article class="trait-card">
+            <h3 class="trait-title">Creative</h3>
+            <p class="trait-body">
+              Crafting compelling narratives, moodboards and visual identities for luxury fragrance and
+              cosmetics brands, from concept to presentation.
+            </p>
+          </article>
+          <article class="trait-card">
+            <h3 class="trait-title">Passionate</h3>
+            <p class="trait-body">
+              Deep appreciation for olfactory artistry, rare raw materials and sustainable beauty – always
+              curious to discover new accords and stories.
+            </p>
+          </article>
+          <article class="trait-card">
+            <h3 class="trait-title">Analytical</h3>
+            <p class="trait-body">
+              Data-driven approach to market research, trend forecasting and competitive mapping, linking
+              numbers to strategic brand decisions.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -1168,12 +1292,14 @@
     <!-- 2. PROFESSIONAL EXPERIENCE -->
     <section id="experience" class="section">
       <div class="shell">
+        <div class="section-index">02 · Experience</div>
         <div class="section-header">
           <div class="eyebrow">Professional Experience</div>
           <h2 class="heading-section">Fragrance, Luxury &amp; Client Experience</h2>
           <p>
-            A blend of marketing, olfactory exploration and boutique client contact –
-            from niche perfumery houses to international cosmetics brands.
+            From fine fragrance development at TechnicoFlor Parfums to niche consultation at Nose Paris
+            and retail expertise at Sephora, my experience bridges olfactory creation, marketing strategy
+            and client experience.
           </p>
         </div>
 
@@ -1200,7 +1326,7 @@
               <div>
                 <strong>2025</strong><br>
                 Sales Consultant – Nose Paris<br>
-                <span class="body-s">Niche perfume boutique</span>
+                <span class="body-s">Niche perfume house, Paris</span>
               </div>
             </div>
 
@@ -1245,14 +1371,18 @@
               <div class="xp-tags">
                 <span class="xp-tag">Marketing Apprentice</span>
                 <span class="xp-tag">Fine Fragrance</span>
-                <span class="xp-tag">Cosmetics</span>
+                <span class="xp-tag">Fragrance Materials</span>
               </div>
+              <p class="body-s">
+                Leading marketing initiatives in fine fragrance development, conducting olfactory research and
+                supporting new product launches across fragrance and cosmetics.
+              </p>
               <ul class="xp-list">
-                <li>Trend monitoring in fine fragrances &amp; cosmetics.</li>
-                <li>Organization of smelling sessions &amp; olfactory workshops.</li>
-                <li>Market studies, competitive analyses and mapping.</li>
-                <li>Creation of briefs, moodboards &amp; olfactory pyramids.</li>
-                <li>Support for new product development and launches.</li>
+                <li>Trend monitoring in fine fragrance &amp; cosmetics.</li>
+                <li>Organization of smelling sessions &amp; olfactive workshops.</li>
+                <li>Market studies &amp; competitive analyses and mapping.</li>
+                <li>Creation of presentations, briefs, moodboards &amp; olfactory pyramids.</li>
+                <li>Support for new product development and marketing launches.</li>
               </ul>
               <div class="xp-mini-label">Proactive studies</div>
               <ul class="xp-proactive">
@@ -1274,55 +1404,56 @@
                 <span class="xp-tag">Sales Consultant</span>
                 <span class="xp-tag">Niche Perfumery</span>
               </div>
-              <ul class="xp-list">
-                <li>Olfactory diagnosis and personalized fragrance recommendations.</li>
-                <li>Deep knowledge of niche perfume houses and their signatures.</li>
-                <li>Discovery of rare raw materials &amp; accords.</li>
-              </ul>
               <p class="body-s">
-                Visuals: boutique interior, niche perfume bottles, customer consultations (gallery to be added).
+                Providing expert consultations on niche perfumery, conducting olfactory diagnoses and
+                introducing clients to rare raw materials and accords.
               </p>
+              <ul class="xp-list">
+                <li>Deep knowledge of niche perfumery houses.</li>
+                <li>Olfactory diagnosis and personalized recommendations.</li>
+                <li>Introduction to rare raw materials &amp; accords.</li>
+                <li>Client relationship management and follow-up.</li>
+              </ul>
             </article>
 
             <!-- Sine Cosmetique -->
             <article class="xp-card">
-              <div class="xp-meta">2024</div>
+              <div class="xp-meta">2024 · France</div>
               <h3 class="xp-title">Sine. Cosmétique</h3>
               <div class="xp-tags">
                 <span class="xp-tag">Marketing Assistant</span>
                 <span class="xp-tag">Cosmetics</span>
               </div>
+              <p class="body-s">
+                Supporting product launches and communication strategies for cosmetic products in a
+                growing brand environment.
+              </p>
               <ul class="xp-list">
                 <li>Market monitoring &amp; product analysis.</li>
-                <li>Support for new cosmetic product launches.</li>
+                <li>Launch of new cosmetic products.</li>
                 <li>Communication &amp; influencer relations.</li>
+                <li>Social media strategy development.</li>
               </ul>
-              <p class="body-s">
-                Visuals: product launch campaigns, social media posts, and trend boards.
-              </p>
             </article>
 
-            <!-- Credit Mutuel & Sephora -->
+            <!-- Sephora -->
             <article class="xp-card">
-              <div class="xp-meta">2023 – 2022</div>
-              <h3 class="xp-title">Client &amp; Retail Experience</h3>
+              <div class="xp-meta">2022 · France</div>
+              <h3 class="xp-title">Sephora</h3>
               <div class="xp-tags">
-                <span class="xp-tag">Crédit Mutuel</span>
-                <span class="xp-tag">Sephora</span>
+                <span class="xp-tag">Sales Consultant</span>
+                <span class="xp-tag">Premium Beauty</span>
               </div>
-              <ul class="xp-list">
-                <li>
-                  <strong>Crédit Mutuel Alliance Fédérale (2023)</strong> – Client service,
-                  listening skills, relationship building.
-                </li>
-                <li>
-                  <strong>Sephora (2022)</strong> – Brand activation and visual merchandising
-                  for Shiseido, NARS, Narciso Rodriguez, Drunk Elephant.
-                </li>
-              </ul>
               <p class="body-s">
-                Focus on luxury client experience, product storytelling and in-store training.
+                Brand specialist for premium beauty brands, focusing on customer experience, product
+                knowledge and in-store storytelling.
               </p>
+              <ul class="xp-list">
+                <li>Brand activation and visual merchandising.</li>
+                <li>Client consultation and personalized recommendations.</li>
+                <li>Product training and expertise development.</li>
+                <li>Key brands: Shiseido, NARS, Narciso Rodriguez, Drunk Elephant.</li>
+              </ul>
             </article>
 
           </div>
@@ -1333,103 +1464,106 @@
     <!-- 3. ACADEMIC JOURNEY (WITH CANADA HERO) -->
     <section id="education" class="section">
       <div class="shell">
+        <div class="section-index">03 · Education</div>
         <div class="section-header">
           <div class="eyebrow">Academic Journey</div>
           <h2 class="heading-section">Luxury, Management &amp; Canada</h2>
           <p>
             A refined academic path in management and luxury, enriched by a double degree
-            and a transformative year in Canada.
+            and a transformative year in Canada at Lakehead University.
           </p>
         </div>
 
         <div class="academic-layout">
-          <div class="academic-grid">
+          <div class="academic-inner">
+            <div class="academic-grid">
 
-            <!-- Canada Highlight -->
-            <section class="academic-canada" aria-label="Canada academic highlight">
-              <div class="academic-canada-text">
-                <div class="canada-eyebrow">Academic Highlight · Double Degree</div>
-                <div class="canada-title">Bachelor of Business Administration</div>
-                <div class="canada-meta">
-                  2023 – 2024 · Lakehead University · Thunder Bay, Ontario
-                </div>
-                <p class="canada-body">
-                  As part of my double degree with Rennes School of Business, I spent a full academic
-                  year at Lakehead University in Canada. All courses were taught in English, with a focus
-                  on Strategic Marketing, Brand Management, Strategic Management, Compensation and Finance
-                  within a North American business culture.
-                </p>
-                <p class="canada-quote">
-                  “My year in Canada was transformative: it expanded my international perspective,
-                  sharpened my strategic marketing skills, and deepened my adaptability in multicultural
-                  environments.”
-                </p>
-                <div class="canada-badges">
-                  <span class="canada-badge">International teamwork</span>
-                  <span class="canada-badge">North American business culture</span>
-                  <span class="canada-badge">Global mindset</span>
-                  <span class="canada-badge">C1 English · TOEIC 845</span>
-                </div>
-              </div>
-
-              <!-- Canada mosaic -->
-              <div class="canada-mosaic">
-                <figure class="canada-card canada-card--large">
-                  <div class="canada-image" style="background-image: url('images/canada-view-1.jpg');"></div>
-                  <div class="canada-overlay"></div>
-                  <div class="canada-flag-pill">
-                    <span>🇨🇦</span><span>Thunder Bay</span>
+              <!-- Canada Highlight -->
+              <section class="academic-canada" aria-label="Canada academic highlight">
+                <div class="academic-canada-text">
+                  <div class="canada-eyebrow">Academic Highlight · Double Degree</div>
+                  <div class="canada-title">Bachelor of Business Administration</div>
+                  <div class="canada-meta">
+                    2023 – 2024 · Lakehead University · Thunder Bay, Ontario, Canada
                   </div>
-                  <div class="canada-label">Lakehead campus · Winter</div>
-                </figure>
-
-                <figure class="canada-card">
-                  <div class="canada-image" style="background-image: url('images/canada-view-2.jpg');"></div>
-                  <div class="canada-overlay"></div>
-                  <div class="canada-label">Lakes &amp; forests</div>
-                </figure>
-
-                <figure class="canada-card">
-                  <div class="canada-image" style="background-image: url('images/canada-view-3.jpg');"></div>
-                  <div class="canada-overlay"></div>
-                  <div class="canada-label">Everyday life abroad</div>
-                </figure>
-              </div>
-            </section>
-
-            <!-- Rest of Academic Path -->
-            <section class="academic-timeline" aria-label="Academic degrees">
-              <!-- MSc Luxury -->
-              <div class="edu-item">
-                <div class="edu-title">Master of Science in Luxury &amp; Design Management</div>
-                <div class="edu-meta">2024 – 2026 · ICN Business School · English Track</div>
-                <div class="edu-body">
-                  Focus on luxury pricing, distribution and sustainability, working on real-life
-                  business cases with luxury brands.
+                  <p class="canada-body">
+                    Full academic immersion abroad as part of a double degree with Rennes School of Business.
+                    Courses were taught entirely in English, with a focus on Strategic Marketing, Brand
+                    Management, Strategic Management, Compensation and Finance within a North American
+                    business context.
+                  </p>
+                  <p class="canada-quote">
+                    “My year in Canada was transformative: it expanded my international perspective,
+                    sharpened my strategic marketing skills, and deepened my adaptability in multicultural
+                    environments.”
+                  </p>
+                  <div class="canada-badges">
+                    <span class="canada-badge">International teamwork</span>
+                    <span class="canada-badge">North American business culture</span>
+                    <span class="canada-badge">Global mindset</span>
+                    <span class="canada-badge">English C1 · TOEIC 845</span>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Rennes Bachelor -->
-              <div class="edu-item">
-                <div class="edu-title">Bachelor in Management – Rennes School of Business</div>
-                <div class="edu-meta">2021 – 2024 · 100% English Track</div>
-                <div class="edu-body">
-                  Finance, marketing, sustainable development and management control
-                  in a highly international environment.
+                <!-- Canada mosaic -->
+                <div class="canada-mosaic">
+                  <figure class="canada-card canada-card--large">
+                    <div class="canada-image" style="background-image: url('images/canada-view-1.jpg');"></div>
+                    <div class="canada-overlay"></div>
+                    <div class="canada-flag-pill">
+                      <span>🇨🇦</span><span>Thunder Bay</span>
+                    </div>
+                    <div class="canada-label">Lakehead campus · Winter</div>
+                  </figure>
+
+                  <figure class="canada-card">
+                    <div class="canada-image" style="background-image: url('images/canada-view-2.jpg');"></div>
+                    <div class="canada-overlay"></div>
+                    <div class="canada-label">Lakes &amp; forests</div>
+                  </figure>
+
+                  <figure class="canada-card">
+                    <div class="canada-image" style="background-image: url('images/canada-view-3.jpg');"></div>
+                    <div class="canada-overlay"></div>
+                    <div class="canada-label">Everyday life abroad</div>
+                  </figure>
                 </div>
-              </div>
+              </section>
 
-              <!-- INSIDE LVMH -->
-              <div class="edu-item">
-                <div class="edu-title">INSIDE LVMH Certificate</div>
-                <div class="edu-meta">2023 · LVMH Ecosystem</div>
-                <div class="edu-body">
-                  Immersion into the LVMH universe: brand development, client experience and luxury
-                  savoir-faire across maisons and categories.
+              <!-- Rest of Academic Path -->
+              <section class="academic-timeline" aria-label="Academic degrees">
+                <!-- MSc Luxury -->
+                <div class="edu-item">
+                  <div class="edu-title">Master of Science in Luxury &amp; Design Management</div>
+                  <div class="edu-meta">2024 – 2026 · ICN Business School · Nancy, France · English Track</div>
+                  <div class="edu-body">
+                    Focus on luxury pricing, distribution and sustainability,
+                    with real-life business cases in collaboration with luxury brands.
+                  </div>
                 </div>
-              </div>
-            </section>
 
+                <!-- Rennes Bachelor -->
+                <div class="edu-item">
+                  <div class="edu-title">Bachelor in Management – Rennes School of Business</div>
+                  <div class="edu-meta">2021 – 2024 · Rennes, France · 100% English Track</div>
+                  <div class="edu-body">
+                    Finance, marketing, sustainable development and management control in a highly
+                    international environment.
+                  </div>
+                </div>
+
+                <!-- INSIDE LVMH -->
+                <div class="edu-item">
+                  <div class="edu-title">INSIDE LVMH Certificate</div>
+                  <div class="edu-meta">2023 · LVMH Ecosystem</div>
+                  <div class="edu-body">
+                    Immersion in the LVMH ecosystem with training on brand development, client experience
+                    and the codes of luxury maisons.
+                  </div>
+                </div>
+              </section>
+
+            </div>
           </div>
         </div>
       </div>
@@ -1438,19 +1572,20 @@
     <!-- 4. SKILLS & TOOLS -->
     <section id="skills" class="section">
       <div class="shell">
+        <div class="section-index">04 · Skills</div>
         <div class="section-header">
-          <div class="eyebrow">Skills &amp; Tools</div>
+          <div class="eyebrow">Skills &amp; Expertise</div>
           <h2 class="heading-section">Olfactory, Strategic &amp; Digital</h2>
           <p>
-            From olfactory analysis and trend forecasting to market mapping and creative storytelling,
-            supported by professional tools used in the perfume and cosmetics industry.
+            A combination of olfactory sensitivity, strategic thinking and digital fluency to support
+            fragrance and cosmetics brands in their development.
           </p>
         </div>
 
         <div class="skills-grid">
           <!-- Marketing & Creative -->
           <div class="card-soft">
-            <div class="card-title">Marketing &amp; Creative Skills</div>
+            <div class="card-title">Marketing &amp; Creative</div>
             <div class="pill-row">
               <span class="pill">Olfactory analysis</span>
               <span class="pill">Trend forecasting</span>
@@ -1464,7 +1599,7 @@
 
           <!-- Tools -->
           <div class="card-soft">
-            <div class="card-title">Tools &amp; Platforms</div>
+            <div class="card-title">Technical Tools</div>
             <div class="pill-row">
               <span class="pill">Mintel</span>
               <span class="pill">Euromonitor</span>
@@ -1472,7 +1607,7 @@
               <span class="pill">Canva</span>
               <span class="pill">PowerPoint</span>
               <span class="pill">Excel</span>
-              <span class="pill">Word</span>
+              <span class="pill">Word · Microsoft Office Suite</span>
             </div>
           </div>
 
@@ -1485,7 +1620,7 @@
               <span class="pill">Hair Care</span>
               <span class="pill">Body Mists</span>
               <span class="pill">Olfactory families</span>
-              <span class="pill">Raw materials</span>
+              <span class="pill">Raw materials knowledge</span>
             </div>
           </div>
         </div>
@@ -1495,12 +1630,13 @@
     <!-- 5. PORTFOLIO & PROACTIVE PROJECTS -->
     <section id="portfolio" class="section">
       <div class="shell">
+        <div class="section-index">05 · Portfolio</div>
         <div class="section-header">
-          <div class="eyebrow">Portfolio &amp; Proactive Projects</div>
+          <div class="eyebrow">Portfolio &amp; Projects</div>
           <h2 class="heading-section">Olfactory Studies &amp; Market Explorations</h2>
           <p>
-            A selection of self-initiated studies, workshops and visual explorations
-            that reflect my curiosity for scents, materials and emerging beauty trends.
+            A selection of proactive studies, market analyses and creative projects developed throughout
+            my experience in fragrance and cosmetics marketing.
           </p>
         </div>
 
@@ -1511,11 +1647,11 @@
             <div class="portfolio-overlay"></div>
             <div class="portfolio-content">
               <div>
-                <div class="portfolio-label">Proactive Study</div>
-                <div class="portfolio-title">Exotic Fruits Olfactory Study</div>
+                <div class="portfolio-label">Olfactory Research</div>
+                <div class="portfolio-title">Exotic Fruits Study</div>
                 <p class="portfolio-text">
-                  Mapping exotic fruit nuances in fine fragrance and body care,
-                  from juicy mango to creamy coconut.
+                  Comprehensive analysis of tropical and exotic fruit accords in contemporary perfumery,
+                  from juicy mango to creamy coconut and passion fruit notes.
                 </p>
               </div>
               <button class="portfolio-cta" type="button">View project</button>
@@ -1528,11 +1664,11 @@
             <div class="portfolio-overlay"></div>
             <div class="portfolio-content">
               <div>
-                <div class="portfolio-label">Proactive Study</div>
+                <div class="portfolio-label">Market Analysis</div>
                 <div class="portfolio-title">Freshness Study</div>
                 <p class="portfolio-text">
-                  Aqua, clean, metallic and mineral notes – from fine fragrance to functional care,
-                  with detailed olfactory pyramids.
+                  Deep dive into aqua, clean and metallic notes trends across fine fragrance categories,
+                  including olfactory pyramids and brand positioning.
                 </p>
               </div>
               <button class="portfolio-cta" type="button">View project</button>
@@ -1545,11 +1681,11 @@
             <div class="portfolio-overlay"></div>
             <div class="portfolio-content">
               <div>
-                <div class="portfolio-label">Trend Study</div>
-                <div class="portfolio-title">Milk Accord &amp; Comfort</div>
+                <div class="portfolio-label">Trend Forecasting</div>
+                <div class="portfolio-title">Milk Accord Analysis</div>
                 <p class="portfolio-text">
-                  Analysis of the milk accord trend in niche and mainstream fragrances,
-                  from skin-like softness to gourmand comfort.
+                  Mapping the rise of creamy, lactonic notes in modern fragrance composition,
+                  from skin-scent intimacy to gourmand comfort.
                 </p>
               </div>
               <button class="portfolio-cta" type="button">View project</button>
@@ -1562,11 +1698,11 @@
             <div class="portfolio-overlay"></div>
             <div class="portfolio-content">
               <div>
-                <div class="portfolio-label">Category Focus</div>
+                <div class="portfolio-label">Market Research</div>
                 <div class="portfolio-title">Hair Care Fragrance Trends</div>
                 <p class="portfolio-text">
-                  From salon-inspired accords to long-lasting hair mists,
-                  with a focus on regional scent preferences.
+                  Analysis of olfactory trends in premium hair care products globally, from salon-inspired
+                  accords to long-lasting hair mists.
                 </p>
               </div>
               <button class="portfolio-cta" type="button">View project</button>
@@ -1579,11 +1715,11 @@
             <div class="portfolio-overlay"></div>
             <div class="portfolio-content">
               <div>
-                <div class="portfolio-label">Global Mapping</div>
-                <div class="portfolio-title">Body Mists Market Overview</div>
+                <div class="portfolio-label">Competitive Analysis</div>
+                <div class="portfolio-title">Body Mists Global Market</div>
                 <p class="portfolio-text">
-                  Global overview of body mists: formats, olfactory directions,
-                  and price positioning across markets.
+                  Complete mapping of the body mist category across major beauty markets,
+                  including formats, olfactory directions and price positioning.
                 </p>
               </div>
               <button class="portfolio-cta" type="button">View project</button>
@@ -1596,11 +1732,11 @@
             <div class="portfolio-overlay"></div>
             <div class="portfolio-content">
               <div>
-                <div class="portfolio-label">Concept Study</div>
+                <div class="portfolio-label">Strategic Report</div>
                 <div class="portfolio-title">Fine Fragrances Revolution 2025</div>
                 <p class="portfolio-text">
-                  Shift toward functional and wellness fragrances:
-                  new uses, new gestures and new storytelling territories.
+                  Identifying the shift toward functional and wellness-focused fragrances: new uses, new
+                  gestures and new storytelling territories for brands.
                 </p>
               </div>
               <button class="portfolio-cta" type="button">View project</button>
@@ -1616,6 +1752,7 @@
         <div class="two-col">
           <!-- Languages -->
           <div>
+            <div class="section-index">06 · Languages</div>
             <div class="section-header" style="margin-bottom:16px;">
               <div class="eyebrow">Languages</div>
               <h2 class="heading-section" style="font-size:1.4rem;">Communication &amp; Cultural Agility</h2>
@@ -1627,7 +1764,7 @@
               </li>
               <li class="lang-item">
                 <span class="lang-label">English</span>
-                <span class="lang-level">C1 · TOEIC 845</span>
+                <span class="lang-level">C1 (TOEIC 845)</span>
               </li>
               <li class="lang-item">
                 <span class="lang-label">Spanish</span>
@@ -1638,30 +1775,75 @@
 
           <!-- Interests -->
           <div>
+            <div class="section-index">07 · Interests</div>
             <div class="section-header" style="margin-bottom:16px;">
-              <div class="eyebrow">Interests</div>
+              <div class="eyebrow">Areas of Interest</div>
               <h2 class="heading-section" style="font-size:1.4rem;">Beyond the Blotter</h2>
             </div>
             <ul class="interest-list">
               <li>Perfume events &amp; brand presentations.</li>
               <li>Sustainable beauty and responsible sourcing.</li>
-              <li>Market innovation &amp; new product concepts.</li>
-              <li>Workshops &amp; olfactory creation sessions.</li>
+              <li>Market innovation and new product concepts.</li>
+              <li>Olfactory creation workshops and ingredient discovery.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 8. CONTACT -->
+    <!-- 8. CURRICULUM VITAE -->
+    <section id="cv" class="section">
+      <div class="shell">
+        <div class="section-index">08 · CV</div>
+        <div class="section-header">
+          <div class="eyebrow">Curriculum Vitae</div>
+          <h2 class="heading-section">A Closer Look at My Journey</h2>
+          <p>
+            Download or view my complete curriculum vitae to learn more about my professional experience,
+            academic background and expertise in luxury marketing and fragrance.
+          </p>
+        </div>
+
+        <div class="cv-card">
+          <div>
+            <div class="heading-sub">Fragrance &amp; Marketing · CV</div>
+            <p class="body-s">
+              The CV details my roles at TechnicoFlor Parfums, Nose Paris, Sine. Cosmétique and Sephora,
+              as well as my academic path between ICN Business School, Rennes School of Business and
+              Lakehead University in Canada.
+            </p>
+            <p class="cv-meta">
+              PDF format · Last updated 2025 · Available in English and French on request.
+            </p>
+          </div>
+          <div>
+            <div class="cv-actions">
+              <a href="CV_Mathilde_Laurent.pdf" class="btn btn-primary" target="_blank" rel="noreferrer">
+                View CV
+              </a>
+              <a href="CV_Mathilde_Laurent.pdf" class="btn btn-ghost" download>
+                Download CV
+              </a>
+            </div>
+            <p class="cv-note">
+              For specific requests (internship, apprenticeship, junior role or project collaboration),
+              I can also provide tailored versions of my CV and additional documentation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CONTACT -->
     <section id="contact" class="section">
       <div class="shell">
+        <div class="section-index">09 · Contact</div>
         <div class="section-header">
-          <div class="eyebrow">Contact</div>
-          <h2 class="heading-section">Let’s Create the Next Story in Scent</h2>
+          <div class="eyebrow">Get In Touch</div>
+          <h2 class="heading-section">Let’s Create Something Beautiful Together</h2>
           <p>
-            Open to internships, apprenticeships and junior roles in perfume and
-            cosmetics marketing, both in France and internationally.
+            I’m always open to discussing new opportunities in luxury fragrance and cosmetics marketing.
+            Let’s connect and explore how we can work together.
           </p>
         </div>
 
@@ -1669,21 +1851,22 @@
           <div>
             <ul class="contact-list">
               <li>
-                <span class="contact-label">Phone</span><br>
-                <span class="contact-main">+33&nbsp;6&nbsp;00&nbsp;00&nbsp;00&nbsp;00</span>
+                <span class="contact-label">Email</span><br>
+                <a class="contact-main" href="mailto:mathilde.laurent@live.fr">
+                  mathilde.laurent@live.fr
+                </a>
               </li>
               <li>
-                <span class="contact-label">Email</span><br>
-                <!-- Replace with real email -->
-                <a class="contact-main" href="mailto:mathilde.laurent@example.com">
-                  mathilde.laurent@example.com
+                <span class="contact-label">Phone</span><br>
+                <a class="contact-main" href="tel:+33629229199">
+                  06&nbsp;29&nbsp;22&nbsp;91&nbsp;99
                 </a>
               </li>
               <li>
                 <span class="contact-label">LinkedIn</span><br>
-                <!-- Replace with real LinkedIn URL -->
+                <!-- Replace link if needed with exact profile URL -->
                 <a class="contact-main" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
-                  linkedin.com/in/mathilde-laurent
+                  Mathilde Laurent
                 </a>
               </li>
               <li>
@@ -1700,15 +1883,15 @@
             </p>
 
             <p class="contact-note">
-              I’m happy to share detailed case studies, full proactive studies and
-              additional documentation on request.
+              Whether you are looking for support on olfactory studies, market analysis, product launches
+              or brand storytelling, I would be delighted to talk.
             </p>
           </div>
 
           <div>
             <p class="contact-perfume">
-              “Like a perfume, a brand must leave a trail – subtle, consistent,
-              and unforgettable. I would love to help you craft it.”
+              “Like a perfume, a brand must leave a trail – subtle, consistent and unforgettable.
+              I would love to help you craft it.”
             </p>
           </div>
         </div>
@@ -1718,7 +1901,7 @@
   </main>
 
   <footer class="site-footer">
-    <span>Mathilde Laurent · Fragrance &amp; Marketing · Portfolio</span>
+    <span>Mathilde Laurent · Fragrance &amp; Marketing · © 2025</span>
   </footer>
 </div>
 
