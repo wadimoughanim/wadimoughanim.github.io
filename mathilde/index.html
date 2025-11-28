@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mathilde Laurent – Fragrance & Marketing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Palette */
+      --bg-page: #F8F4EF;
+      --bg-surface: #FDFBF7;
+      --bg-surface-soft: #F4F1E8;
+      --bg-surface-alt: #E7DED3;
+      --text-main: #2E2A26;
+      --text-muted: #6F665E;
+      --accent-gold: #C0A46A;
+      --border-soft: rgba(0,0,0,0.06);
+      --shadow-soft: 0 20px 50px rgba(15,12,10,0.06);
+
+      /* Spacing scale */
+      --space-xs: 4px;
+      --space-s: 8px;
+      --space-m: 16px;
+      --space-l: 24px;
+      --space-xl: 40px;
+      --space-xxl: 80px;
+
+      /* Radius */
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --radius-pill: 999px;
+
+      /* Layout */
+      --max-width: 1120px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, rgba(255,255,255,0.5), transparent 60%), var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding-inline: 24px;
+    }
+
+    .section {
+      padding-block: var(--space-xl);
+    }
+
+    @media (min-width: 900px) {
+      .section {
+        padding-block: var(--space-xxl);
+      }
+    }
+
+    .section + .section {
+      border-top: 1px solid rgba(0,0,0,0.04);
+    }
+
+    /* Typography blocks */
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: var(--space-s);
+    }
+
+    .heading-hero {
+      font-family: "Playfair Display", "Cormorant Garamond", serif;
+      font-size: clamp(2.4rem, 4vw, 3.1rem);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .heading-section {
+      font-family: "Playfair Display", "Cormorant Garamond", serif;
+      font-size: 1.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-xs);
+    }
+
+    .heading-sub {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: var(--space-xs);
+    }
+
+    .section-header {
+      margin-bottom: var(--space-l);
+      max-width: 520px;
+    }
+
+    .section-header p {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(0,0,0,0.16);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      cursor: pointer;
+      background: transparent;
+      transition:
+        background 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #fdfbf8, var(--bg-surface-alt));
+      box-shadow: 0 16px 36px rgba(0,0,0,0.08);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #fdfaf6, var(--bg-surface-alt));
+      transform: translateY(-1px);
+      box-shadow: 0 20px 44px rgba(0,0,0,0.1);
+    }
+
+    .btn-ghost {
+      background: rgba(248,244,239,0.7);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(248,244,239,0.98);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+    }
+
+    /* Header / Nav */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(248,244,239,0.96), rgba(248,244,239,0.9));
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-m);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      background: radial-gradient(circle at 20% 0, rgba(255,255,255,0.9), var(--bg-surface-alt));
+    }
+
+    .nav-logo-text {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent-gold);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      border-radius: var(--radius-pill);
+      padding: 7px 14px;
+      border: 1px solid rgba(0,0,0,0.12);
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(231,222,211,0.95));
+      box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+      font-size: 0.76rem;
+    }
+
+    .nav-cta::after {
+      display: none; /* no underline */
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 1.4rem;
+      padding: 4px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 820px) {
+      .nav {
+        padding-inline: 16px;
+      }
+
+      .nav-links {
+        position: fixed;
+        inset: 60px 16px auto 16px;
+        border-radius: 22px;
+        padding: 18px 18px 14px;
+        background: rgba(248,244,239,0.98);
+        box-shadow: var(--shadow-soft);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-cta {
+        align-self: stretch;
+        text-align: center;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+      }
+    }
+
+    /* HERO / ABOUT */
+    .section--hero {
+      padding-top: var(--space-l);
+    }
+
+    @media (min-width: 900px) {
+      .section--hero {
+        padding-top: var(--space-xl);
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    @media (min-width: 960px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      }
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(231,222,211,0.86));
+      border-radius: var(--radius-xl);
+      padding: 28px 26px 26px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0 0, rgba(255,255,255,0.95), transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tagline {
+      margin-top: var(--space-m);
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 32rem;
+    }
+
+    .hero-meta {
+      margin-top: var(--space-m);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .hero-pill {
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(0,0,0,0.08);
+      background: rgba(244,241,232,0.8);
+    }
+
+    .hero-actions {
+      margin-top: var(--space-l);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-signature-block {
+      margin-top: var(--space-l);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .hero-signature-name {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: 1.05rem;
+    }
+
+    .hero-signature-role {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .hero-media {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-m);
+    }
+
+    .hero-photo-main {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: var(--shadow-soft);
+      background: #ddd;
+    }
+
+    .hero-photo-main img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .hero-photo-secondary-wrapper {
+      align-self: flex-start;
+    }
+
+    .hero-photo-secondary {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.06);
+      background: #ddd;
+      max-width: 260px;
+    }
+
+    .hero-photo-secondary img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: var(--space-xs);
+    }
+
+    @media (max-width: 600px) {
+      .hero-photo-secondary {
+        max-width: 220px;
+      }
+    }
+
+    /* EXPERIENCE */
+    .experience-layout {
+      display: grid;
+      gap: var(--space-l);
+    }
+
+    @media (min-width: 960px) {
+      .experience-layout {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+        gap: var(--space-xl);
+      }
+    }
+
+    .timeline {
+      border-radius: var(--radius-lg);
+      padding: 20px 18px 14px;
+      background: rgba(250,247,241,0.95);
+      border: 1px solid var(--border-soft);
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-line {
+      position: relative;
+    }
+
+    .timeline-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid var(--accent-gold);
+      background: radial-gradient(circle at 30% 0, #fff, var(--bg-surface-alt));
+      margin-top: 4px;
+    }
+
+    .timeline-line::after {
+      content: "";
+      position: absolute;
+      top: 17px;
+      bottom: -18px;
+      left: 4.5px;
+      width: 1px;
+      background: rgba(0,0,0,0.08);
+    }
+
+    .timeline-item:last-child .timeline-line::after {
+      display: none;
+    }
+
+    .xp-grid {
+      display: grid;
+      gap: var(--space-m);
+    }
+
+    @media (min-width: 740px) {
+      .xp-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .xp-card {
+      border-radius: var(--radius-lg);
+      padding: 18px 16px 16px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .xp-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(192,164,106,0.12), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.18s ease;
+      pointer-events: none;
+    }
+
+    .xp-card:hover::before {
+      opacity: 1;
+    }
+
+    .xp-meta {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .xp-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .xp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .xp-tag {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(0,0,0,0.06);
+      background: rgba(244,241,232,0.9);
+    }
+
+    .xp-list {
+      margin-top: 6px;
+      padding-left: 18px;
+      font-size: 0.9rem;
+    }
+
+    .xp-list li {
+      margin-bottom: 4px;
+    }
+
+    .xp-mini-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .xp-proactive {
+      margin-top: 4px;
+      padding-left: 18px;
+      font-size: 0.88rem;
+    }
+
+    /* ACADEMIC + CANADA */
+    .academic-layout {
+      border-radius: var(--radius-xl);
+      padding: var(--space-l) var(--space-m);
+      background: rgba(255,255,255,0.96);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    @media (min-width: 900px) {
+      .academic-layout {
+        padding: var(--space-xl);
+      }
+    }
+
+    .academic-grid {
+      display: grid;
+      gap: var(--space-xl);
+    }
+
+    @media (min-width: 980px) {
+      .academic-grid {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        align-items: flex-start;
+      }
+    }
+
+    .academic-canada {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-m);
+    }
+
+    .academic-canada-text {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .canada-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .canada-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.06rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .canada-meta {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .canada-body {
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .canada-quote {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--text-main);
+      margin-top: var(--space-xs);
+    }
+
+    .canada-badges {
+      margin-top: var(--space-s);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .canada-badge {
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(0,0,0,0.12);
+      background: rgba(248,244,239,0.96);
+    }
+
+    .canada-mosaic {
+      display: grid;
+      gap: var(--space-s);
+    }
+
+    @media (min-width: 720px) {
+      .canada-mosaic {
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: 190px 190px;
+      }
+    }
+
+    @media (min-width: 1060px) {
+      .canada-mosaic {
+        grid-template-rows: 220px 220px;
+      }
+    }
+
+    .canada-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #dcd4c9;
+    }
+
+    .canada-card::before {
+      content: "";
+      display: block;
+      padding-bottom: 65%;
+    }
+
+    .canada-card--large {
+      grid-row: 1 / span 2;
+      grid-column: 1 / span 1;
+    }
+
+    @media (max-width: 719px) {
+      .canada-card::before {
+        padding-bottom: 60%;
+      }
+    }
+
+    .canada-image {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.02);
+      filter: saturate(1.05);
+    }
+
+    .canada-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.08));
+    }
+
+    .canada-label,
+    .canada-flag-pill {
+      position: absolute;
+      border-radius: var(--radius-pill);
+      padding: 5px 11px;
+      border: 1px solid rgba(255,255,255,0.7);
+      background: rgba(0,0,0,0.28);
+      color: #fff;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .canada-flag-pill {
+      top: 12px;
+      right: 12px;
+    }
+
+    .canada-label {
+      left: 14px;
+      bottom: 14px;
+    }
+
+    .academic-timeline {
+      border-radius: 20px;
+      padding: var(--space-m);
+      background: rgba(248,244,239,0.96);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .edu-item {
+      padding-bottom: var(--space-m);
+      margin-bottom: var(--space-m);
+      border-bottom: 1px dashed rgba(0,0,0,0.08);
+    }
+
+    .edu-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .edu-title {
+      font-family: "Playfair Display", serif;
+      font-size: 0.98rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-xs);
+    }
+
+    .edu-meta {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: var(--space-xs);
+    }
+
+    .edu-body {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* SKILLS & TOOLS */
+    .skills-grid {
+      display: grid;
+      gap: var(--space-m);
+    }
+
+    @media (min-width: 880px) {
+      .skills-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .card-soft {
+      border-radius: var(--radius-lg);
+      padding: 18px 16px 16px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.03);
+    }
+
+    .card-title {
+      font-family: "Playfair Display", serif;
+      font-size: 0.98rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-s);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      border-radius: var(--radius-pill);
+      padding: 7px 14px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: rgba(248,244,239,0.9);
+      font-size: 0.84rem;
+    }
+
+    /* PORTFOLIO */
+    .portfolio-grid {
+      display: grid;
+      gap: var(--space-m);
+    }
+
+    @media (min-width: 860px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+      }
+    }
+
+    .portfolio-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.06);
+      background: #E5DDD1;
+      min-height: 180px;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.06);
+      cursor: pointer;
+    }
+
+    .portfolio-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.1);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, rgba(0,0,0,0.38), rgba(0,0,0,0.06));
+      opacity: 0.78;
+      transition: opacity 0.2s ease;
+    }
+
+    .portfolio-card:hover .portfolio-overlay {
+      opacity: 0.56;
+    }
+
+    .portfolio-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      padding: 14px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .portfolio-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    .portfolio-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.04rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    .portfolio-text {
+      font-size: 0.84rem;
+      opacity: 0.95;
+      margin-top: 4px;
+    }
+
+    .portfolio-cta {
+      align-self: flex-start;
+      margin-top: 10px;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.7);
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      background: rgba(0,0,0,0.18);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Lang & Interests */
+    .two-col {
+      display: grid;
+      gap: var(--space-l);
+    }
+
+    @media (min-width: 760px) {
+      .two-col {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+    }
+
+    .lang-list,
+    .interest-list {
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      padding-block: 8px;
+      border-bottom: 1px dashed rgba(0,0,0,0.08);
+    }
+
+    .lang-item:last-child {
+      border-bottom: none;
+    }
+
+    .lang-label {
+      font-weight: 500;
+    }
+
+    .lang-level {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .interest-list li {
+      padding-block: 6px;
+      border-bottom: 1px dashed rgba(0,0,0,0.08);
+      color: var(--text-muted);
+    }
+
+    .interest-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* Contact */
+    .contact-card {
+      border-radius: var(--radius-xl);
+      padding: var(--space-l) var(--space-m);
+      background: linear-gradient(135deg, rgba(248,244,239,0.97), rgba(226,214,197,0.95));
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      gap: var(--space-m);
+    }
+
+    @media (min-width: 780px) {
+      .contact-card {
+        padding: var(--space-xl);
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      }
+    }
+
+    .contact-list {
+      list-style: none;
+      font-size: 0.96rem;
+    }
+
+    .contact-list li {
+      margin-bottom: 8px;
+    }
+
+    .contact-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-block;
+      margin-bottom: 2px;
+    }
+
+    .contact-main {
+      font-size: 1rem;
+    }
+
+    .contact-note {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: var(--space-s);
+    }
+
+    .contact-perfume {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--text-main);
+    }
+
+    .contact-cv-inline {
+      margin-top: var(--space-m);
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .contact-cv-link {
+      font-size: 0.86rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(0,0,0,0.18);
+      padding-bottom: 2px;
+    }
+
+    .site-footer {
+      padding-block: 26px 30px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .site-footer span {
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <div class="nav">
+      <div class="nav-left">
+        <div class="nav-logo-mark">ML</div>
+        <div class="nav-logo-text">Mathilde&nbsp;Laurent</div>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleNav()">☰</button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Academic</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <a href="CV_Mathilde_Laurent.pdf" class="nav-cta" target="_blank" rel="noreferrer">
+          CV (PDF)
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 1. HOME / ABOUT -->
+    <section id="about" class="section section--hero">
+      <div class="shell">
+        <div class="hero-grid">
+
+          <!-- Text -->
+          <div class="hero-card">
+            <div class="hero-card-inner">
+              <div class="eyebrow">Fragrance &amp; Luxury Marketing</div>
+              <h1 class="heading-hero">Mathilde Laurent</h1>
+              <p class="hero-tagline">
+                I’m Mathilde, passionate about fragrances, luxury marketing, and sustainable beauty.
+                Curious, creative, analytical, and driven by innovation, I combine marketing experience
+                with a deep love for olfactory creation and an international perspective shaped by a year in Canada.
+              </p>
+
+              <div class="hero-meta">
+                <div class="hero-pill">Marketing Apprentice · TechnicoFlor Parfums</div>
+                <div class="hero-pill">Luxury &amp; Design Management</div>
+                <div class="hero-pill">Perfume &amp; Cosmetics Industry</div>
+              </div>
+
+              <div class="hero-actions">
+                <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                <a href="CV_Mathilde_Laurent.pdf" class="btn btn-ghost" target="_blank" rel="noreferrer">
+                  View CV (PDF)
+                </a>
+              </div>
+
+              <div class="hero-signature-block">
+                <div class="hero-signature-name">Mathilde Laurent</div>
+                <div class="hero-signature-role">Fragrance &amp; Marketing</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photos -->
+          <div class="hero-media">
+            <div class="hero-photo-main">
+              <!-- Professional portrait -->
+              <img src="images/mathilde-portrait-pro.jpg" alt="Professional portrait of Mathilde Laurent" />
+            </div>
+            <div class="hero-photo-secondary-wrapper">
+              <div class="hero-photo-secondary">
+                <!-- Holiday portrait -->
+                <img src="images/mathilde-holiday.jpg" alt="Mathilde Laurent during holidays" />
+              </div>
+              <p class="hero-note">
+                A French vision of beauty and scents, between Paris and international experiences.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PROFESSIONAL EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="shell">
+        <div class="section-header">
+          <div class="eyebrow">Professional Experience</div>
+          <h2 class="heading-section">Fragrance, Luxury &amp; Client Experience</h2>
+          <p>
+            A blend of marketing, olfactory exploration and boutique client contact –
+            from niche perfumery houses to international cosmetics brands.
+          </p>
+        </div>
+
+        <div class="experience-layout">
+          <!-- Timeline -->
+          <aside class="timeline" aria-label="Professional timeline">
+            <div class="heading-sub">Timeline</div>
+
+            <div class="timeline-item">
+              <div class="timeline-line">
+                <div class="timeline-dot"></div>
+              </div>
+              <div>
+                <strong>2024 – 2026</strong><br>
+                Marketing Apprentice – TechnicoFlor Parfums<br>
+                <span class="body-s">Levallois-Perret, France</span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-line">
+                <div class="timeline-dot"></div>
+              </div>
+              <div>
+                <strong>2025</strong><br>
+                Sales Consultant – Nose Paris<br>
+                <span class="body-s">Niche perfume boutique</span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-line">
+                <div class="timeline-dot"></div>
+              </div>
+              <div>
+                <strong>2024</strong><br>
+                Marketing Assistant – Sine. Cosmétique
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-line">
+                <div class="timeline-dot"></div>
+              </div>
+              <div>
+                <strong>2023</strong><br>
+                Client Experience – Crédit Mutuel Alliance Fédérale
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-line">
+                <div class="timeline-dot"></div>
+              </div>
+              <div>
+                <strong>2022</strong><br>
+                Sales Consultant – Sephora
+              </div>
+            </div>
+          </aside>
+
+          <!-- Cards -->
+          <div class="xp-grid">
+
+            <!-- TechnicoFlor -->
+            <article class="xp-card">
+              <div class="xp-meta">2024 – 2026 · Levallois-Perret, France</div>
+              <h3 class="xp-title">TechnicoFlor Parfums</h3>
+              <div class="xp-tags">
+                <span class="xp-tag">Marketing Apprentice</span>
+                <span class="xp-tag">Fine Fragrance</span>
+                <span class="xp-tag">Cosmetics</span>
+              </div>
+              <ul class="xp-list">
+                <li>Trend monitoring in fine fragrances &amp; cosmetics.</li>
+                <li>Organization of smelling sessions &amp; olfactory workshops.</li>
+                <li>Market studies, competitive analyses and mapping.</li>
+                <li>Creation of briefs, moodboards &amp; olfactory pyramids.</li>
+                <li>Support for new product development and launches.</li>
+              </ul>
+              <div class="xp-mini-label">Proactive studies</div>
+              <ul class="xp-proactive">
+                <li>Exotic Fruits Olfactory Study</li>
+                <li>Freshness Study (Aqua, Clean, Metal Notes)</li>
+                <li>Milk Accord Trend Analysis</li>
+                <li>Cosmetics Olfactory Mapping</li>
+                <li>Hair Care Fragrance Trends</li>
+                <li>Body Mists Global Market Mapping</li>
+                <li>“Fine Fragrances Revolution 2025”</li>
+              </ul>
+            </article>
+
+            <!-- Nose Paris -->
+            <article class="xp-card">
+              <div class="xp-meta">2025 · Paris, France</div>
+              <h3 class="xp-title">Nose Paris</h3>
+              <div class="xp-tags">
+                <span class="xp-tag">Sales Consultant</span>
+                <span class="xp-tag">Niche Perfumery</span>
+              </div>
+              <ul class="xp-list">
+                <li>Olfactory diagnosis and personalized fragrance recommendations.</li>
+                <li>Deep knowledge of niche perfume houses and their signatures.</li>
+                <li>Discovery of rare raw materials &amp; accords.</li>
+              </ul>
+              <p class="body-s">
+                Visuals: boutique interior, niche perfume bottles, customer consultations (gallery to be added).
+              </p>
+            </article>
+
+            <!-- Sine Cosmetique -->
+            <article class="xp-card">
+              <div class="xp-meta">2024</div>
+              <h3 class="xp-title">Sine. Cosmétique</h3>
+              <div class="xp-tags">
+                <span class="xp-tag">Marketing Assistant</span>
+                <span class="xp-tag">Cosmetics</span>
+              </div>
+              <ul class="xp-list">
+                <li>Market monitoring &amp; product analysis.</li>
+                <li>Support for new cosmetic product launches.</li>
+                <li>Communication &amp; influencer relations.</li>
+              </ul>
+              <p class="body-s">
+                Visuals: product launch campaigns, social media posts, and trend boards.
+              </p>
+            </article>
+
+            <!-- Credit Mutuel & Sephora -->
+            <article class="xp-card">
+              <div class="xp-meta">2023 – 2022</div>
+              <h3 class="xp-title">Client &amp; Retail Experience</h3>
+              <div class="xp-tags">
+                <span class="xp-tag">Crédit Mutuel</span>
+                <span class="xp-tag">Sephora</span>
+              </div>
+              <ul class="xp-list">
+                <li>
+                  <strong>Crédit Mutuel Alliance Fédérale (2023)</strong> – Client service,
+                  listening skills, relationship building.
+                </li>
+                <li>
+                  <strong>Sephora (2022)</strong> – Brand activation and visual merchandising
+                  for Shiseido, NARS, Narciso Rodriguez, Drunk Elephant.
+                </li>
+              </ul>
+              <p class="body-s">
+                Focus on luxury client experience, product storytelling and in-store training.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ACADEMIC JOURNEY (WITH CANADA HERO) -->
+    <section id="education" class="section">
+      <div class="shell">
+        <div class="section-header">
+          <div class="eyebrow">Academic Journey</div>
+          <h2 class="heading-section">Luxury, Management &amp; Canada</h2>
+          <p>
+            A refined academic path in management and luxury, enriched by a double degree
+            and a transformative year in Canada.
+          </p>
+        </div>
+
+        <div class="academic-layout">
+          <div class="academic-grid">
+
+            <!-- Canada Highlight -->
+            <section class="academic-canada" aria-label="Canada academic highlight">
+              <div class="academic-canada-text">
+                <div class="canada-eyebrow">Academic Highlight · Double Degree</div>
+                <div class="canada-title">Bachelor of Business Administration</div>
+                <div class="canada-meta">
+                  2023 – 2024 · Lakehead University · Thunder Bay, Ontario
+                </div>
+                <p class="canada-body">
+                  As part of my double degree with Rennes School of Business, I spent a full academic
+                  year at Lakehead University in Canada. All courses were taught in English, with a focus
+                  on Strategic Marketing, Brand Management, Strategic Management, Compensation and Finance
+                  within a North American business culture.
+                </p>
+                <p class="canada-quote">
+                  “My year in Canada was transformative: it expanded my international perspective,
+                  sharpened my strategic marketing skills, and deepened my adaptability in multicultural
+                  environments.”
+                </p>
+                <div class="canada-badges">
+                  <span class="canada-badge">International teamwork</span>
+                  <span class="canada-badge">North American business culture</span>
+                  <span class="canada-badge">Global mindset</span>
+                  <span class="canada-badge">C1 English · TOEIC 845</span>
+                </div>
+              </div>
+
+              <!-- Canada mosaic -->
+              <div class="canada-mosaic">
+                <figure class="canada-card canada-card--large">
+                  <div class="canada-image" style="background-image: url('images/canada-view-1.jpg');"></div>
+                  <div class="canada-overlay"></div>
+                  <div class="canada-flag-pill">
+                    <span>🇨🇦</span><span>Thunder Bay</span>
+                  </div>
+                  <div class="canada-label">Lakehead campus · Winter</div>
+                </figure>
+
+                <figure class="canada-card">
+                  <div class="canada-image" style="background-image: url('images/canada-view-2.jpg');"></div>
+                  <div class="canada-overlay"></div>
+                  <div class="canada-label">Lakes &amp; forests</div>
+                </figure>
+
+                <figure class="canada-card">
+                  <div class="canada-image" style="background-image: url('images/canada-view-3.jpg');"></div>
+                  <div class="canada-overlay"></div>
+                  <div class="canada-label">Everyday life abroad</div>
+                </figure>
+              </div>
+            </section>
+
+            <!-- Rest of Academic Path -->
+            <section class="academic-timeline" aria-label="Academic degrees">
+              <!-- MSc Luxury -->
+              <div class="edu-item">
+                <div class="edu-title">Master of Science in Luxury &amp; Design Management</div>
+                <div class="edu-meta">2024 – 2026 · ICN Business School · English Track</div>
+                <div class="edu-body">
+                  Focus on luxury pricing, distribution and sustainability, working on real-life
+                  business cases with luxury brands.
+                </div>
+              </div>
+
+              <!-- Rennes Bachelor -->
+              <div class="edu-item">
+                <div class="edu-title">Bachelor in Management – Rennes School of Business</div>
+                <div class="edu-meta">2021 – 2024 · 100% English Track</div>
+                <div class="edu-body">
+                  Finance, marketing, sustainable development and management control
+                  in a highly international environment.
+                </div>
+              </div>
+
+              <!-- INSIDE LVMH -->
+              <div class="edu-item">
+                <div class="edu-title">INSIDE LVMH Certificate</div>
+                <div class="edu-meta">2023 · LVMH Ecosystem</div>
+                <div class="edu-body">
+                  Immersion into the LVMH universe: brand development, client experience and luxury
+                  savoir-faire across maisons and categories.
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SKILLS & TOOLS -->
+    <section id="skills" class="section">
+      <div class="shell">
+        <div class="section-header">
+          <div class="eyebrow">Skills &amp; Tools</div>
+          <h2 class="heading-section">Olfactory, Strategic &amp; Digital</h2>
+          <p>
+            From olfactory analysis and trend forecasting to market mapping and creative storytelling,
+            supported by professional tools used in the perfume and cosmetics industry.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Marketing & Creative -->
+          <div class="card-soft">
+            <div class="card-title">Marketing &amp; Creative Skills</div>
+            <div class="pill-row">
+              <span class="pill">Olfactory analysis</span>
+              <span class="pill">Trend forecasting</span>
+              <span class="pill">Market studies</span>
+              <span class="pill">Brief creation</span>
+              <span class="pill">Moodboard development</span>
+              <span class="pill">Brand storytelling</span>
+              <span class="pill">Social media management</span>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="card-soft">
+            <div class="card-title">Tools &amp; Platforms</div>
+            <div class="pill-row">
+              <span class="pill">Mintel</span>
+              <span class="pill">Euromonitor</span>
+              <span class="pill">Michael Edwards – Fragrances of the World</span>
+              <span class="pill">Canva</span>
+              <span class="pill">PowerPoint</span>
+              <span class="pill">Excel</span>
+              <span class="pill">Word</span>
+            </div>
+          </div>
+
+          <!-- Industry Expertise -->
+          <div class="card-soft">
+            <div class="card-title">Industry Expertise</div>
+            <div class="pill-row">
+              <span class="pill">Fine Fragrances</span>
+              <span class="pill">Cosmetics</span>
+              <span class="pill">Hair Care</span>
+              <span class="pill">Body Mists</span>
+              <span class="pill">Olfactory families</span>
+              <span class="pill">Raw materials</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. PORTFOLIO & PROACTIVE PROJECTS -->
+    <section id="portfolio" class="section">
+      <div class="shell">
+        <div class="section-header">
+          <div class="eyebrow">Portfolio &amp; Proactive Projects</div>
+          <h2 class="heading-section">Olfactory Studies &amp; Market Explorations</h2>
+          <p>
+            A selection of self-initiated studies, workshops and visual explorations
+            that reflect my curiosity for scents, materials and emerging beauty trends.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <!-- Exotic Fruits -->
+          <article class="portfolio-card">
+            <div class="portfolio-bg" style="background-image: url('images/portfolio-exotic-fruits.jpg');"></div>
+            <div class="portfolio-overlay"></div>
+            <div class="portfolio-content">
+              <div>
+                <div class="portfolio-label">Proactive Study</div>
+                <div class="portfolio-title">Exotic Fruits Olfactory Study</div>
+                <p class="portfolio-text">
+                  Mapping exotic fruit nuances in fine fragrance and body care,
+                  from juicy mango to creamy coconut.
+                </p>
+              </div>
+              <button class="portfolio-cta" type="button">View project</button>
+            </div>
+          </article>
+
+          <!-- Freshness -->
+          <article class="portfolio-card">
+            <div class="portfolio-bg" style="background-image: url('images/portfolio-freshness.jpg');"></div>
+            <div class="portfolio-overlay"></div>
+            <div class="portfolio-content">
+              <div>
+                <div class="portfolio-label">Proactive Study</div>
+                <div class="portfolio-title">Freshness Study</div>
+                <p class="portfolio-text">
+                  Aqua, clean, metallic and mineral notes – from fine fragrance to functional care,
+                  with detailed olfactory pyramids.
+                </p>
+              </div>
+              <button class="portfolio-cta" type="button">View project</button>
+            </div>
+          </article>
+
+          <!-- Milk Accord -->
+          <article class="portfolio-card">
+            <div class="portfolio-bg" style="background-image: url('images/portfolio-milk.jpg');"></div>
+            <div class="portfolio-overlay"></div>
+            <div class="portfolio-content">
+              <div>
+                <div class="portfolio-label">Trend Study</div>
+                <div class="portfolio-title">Milk Accord &amp; Comfort</div>
+                <p class="portfolio-text">
+                  Analysis of the milk accord trend in niche and mainstream fragrances,
+                  from skin-like softness to gourmand comfort.
+                </p>
+              </div>
+              <button class="portfolio-cta" type="button">View project</button>
+            </div>
+          </article>
+
+          <!-- Hair Care -->
+          <article class="portfolio-card">
+            <div class="portfolio-bg" style="background-image: url('images/portfolio-haircare.jpg');"></div>
+            <div class="portfolio-overlay"></div>
+            <div class="portfolio-content">
+              <div>
+                <div class="portfolio-label">Category Focus</div>
+                <div class="portfolio-title">Hair Care Fragrance Trends</div>
+                <p class="portfolio-text">
+                  From salon-inspired accords to long-lasting hair mists,
+                  with a focus on regional scent preferences.
+                </p>
+              </div>
+              <button class="portfolio-cta" type="button">View project</button>
+            </div>
+          </article>
+
+          <!-- Body Mists -->
+          <article class="portfolio-card">
+            <div class="portfolio-bg" style="background-image: url('images/portfolio-body-mists.jpg');"></div>
+            <div class="portfolio-overlay"></div>
+            <div class="portfolio-content">
+              <div>
+                <div class="portfolio-label">Global Mapping</div>
+                <div class="portfolio-title">Body Mists Market Overview</div>
+                <p class="portfolio-text">
+                  Global overview of body mists: formats, olfactory directions,
+                  and price positioning across markets.
+                </p>
+              </div>
+              <button class="portfolio-cta" type="button">View project</button>
+            </div>
+          </article>
+
+          <!-- Fine Fragrances Revolution -->
+          <article class="portfolio-card">
+            <div class="portfolio-bg" style="background-image: url('images/portfolio-revolution2025.jpg');"></div>
+            <div class="portfolio-overlay"></div>
+            <div class="portfolio-content">
+              <div>
+                <div class="portfolio-label">Concept Study</div>
+                <div class="portfolio-title">Fine Fragrances Revolution 2025</div>
+                <p class="portfolio-text">
+                  Shift toward functional and wellness fragrances:
+                  new uses, new gestures and new storytelling territories.
+                </p>
+              </div>
+              <button class="portfolio-cta" type="button">View project</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6–7. LANGUAGES & INTERESTS -->
+    <section class="section">
+      <div class="shell">
+        <div class="two-col">
+          <!-- Languages -->
+          <div>
+            <div class="section-header" style="margin-bottom:16px;">
+              <div class="eyebrow">Languages</div>
+              <h2 class="heading-section" style="font-size:1.4rem;">Communication &amp; Cultural Agility</h2>
+            </div>
+            <ul class="lang-list">
+              <li class="lang-item">
+                <span class="lang-label">French</span>
+                <span class="lang-level">Native</span>
+              </li>
+              <li class="lang-item">
+                <span class="lang-label">English</span>
+                <span class="lang-level">C1 · TOEIC 845</span>
+              </li>
+              <li class="lang-item">
+                <span class="lang-label">Spanish</span>
+                <span class="lang-level">A2</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Interests -->
+          <div>
+            <div class="section-header" style="margin-bottom:16px;">
+              <div class="eyebrow">Interests</div>
+              <h2 class="heading-section" style="font-size:1.4rem;">Beyond the Blotter</h2>
+            </div>
+            <ul class="interest-list">
+              <li>Perfume events &amp; brand presentations.</li>
+              <li>Sustainable beauty and responsible sourcing.</li>
+              <li>Market innovation &amp; new product concepts.</li>
+              <li>Workshops &amp; olfactory creation sessions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CONTACT -->
+    <section id="contact" class="section">
+      <div class="shell">
+        <div class="section-header">
+          <div class="eyebrow">Contact</div>
+          <h2 class="heading-section">Let’s Create the Next Story in Scent</h2>
+          <p>
+            Open to internships, apprenticeships and junior roles in perfume and
+            cosmetics marketing, both in France and internationally.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div>
+            <ul class="contact-list">
+              <li>
+                <span class="contact-label">Phone</span><br>
+                <span class="contact-main">+33&nbsp;6&nbsp;00&nbsp;00&nbsp;00&nbsp;00</span>
+              </li>
+              <li>
+                <span class="contact-label">Email</span><br>
+                <!-- Replace with real email -->
+                <a class="contact-main" href="mailto:mathilde.laurent@example.com">
+                  mathilde.laurent@example.com
+                </a>
+              </li>
+              <li>
+                <span class="contact-label">LinkedIn</span><br>
+                <!-- Replace with real LinkedIn URL -->
+                <a class="contact-main" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+                  linkedin.com/in/mathilde-laurent
+                </a>
+              </li>
+              <li>
+                <span class="contact-label">Location</span><br>
+                <span class="contact-main">Île-de-France, France</span>
+              </li>
+            </ul>
+
+            <p class="contact-cv-inline">
+              Full resume available here:
+              <a href="CV_Mathilde_Laurent.pdf" target="_blank" rel="noreferrer" class="contact-cv-link">
+                View CV (PDF)
+              </a>
+            </p>
+
+            <p class="contact-note">
+              I’m happy to share detailed case studies, full proactive studies and
+              additional documentation on request.
+            </p>
+          </div>
+
+          <div>
+            <p class="contact-perfume">
+              “Like a perfume, a brand must leave a trail – subtle, consistent,
+              and unforgettable. I would love to help you craft it.”
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>Mathilde Laurent · Fragrance &amp; Marketing · Portfolio</span>
+  </footer>
+</div>
+
+<script>
+  function toggleNav() {
+    const nav = document.getElementById('nav-links');
+    nav.classList.toggle('open');
+  }
+
+  // Close mobile nav when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('nav-links').classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
